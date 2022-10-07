@@ -67,7 +67,7 @@ void RandomMeiro(void){
 }
 
 int px, py;		/* プレイヤーのxy座標 */
-int goal_count;	/* 塗りつぶすべき床の数 */
+int goal_count;		/* 塗りつぶすべき床の数 */
 int count;		/* 塗りつぶした床の数 */
 
 /* 最初の状態に戻る */
@@ -98,14 +98,13 @@ void draw_meiro(void)
 	int x, y;
 	for(y=0; y<GYO; y++){
 		for(x=0; x<RETU; x++){
-			if(x == px && y == py){	/* プレイヤーの位置のとき */
+			if(x == px && y == py){		/* プレイヤーの位置のとき */
 				meiro[y][x] = 2;	/* 塗りつぶし済みにする */
 				count ++;		/* 塗りつぶした数をカウント */
 				printf("人");		/* プレイヤー */
 			}
 			else if(meiro[y][x] == 0)	/* 移動可能な床 */
-				printf("　");	/* ← 注）全角スペース */
-				// printf("　");	/* ← 注）全角スペース */
+				printf("　");		/* ← 注）全角スペース */
 			else if(meiro[y][x] == 1)	/* 壁 */
 				printf("■");
 			else if(meiro[y][x] == 2)	/* 塗った床 */
@@ -133,11 +132,11 @@ void key_input(void)
 	else if(key == 75 && meiro[py][px-1] == 0)		/* ←キー */
 		px --;	/* 左に移動 */
 	else if(key == 77 && meiro[py][px+1] == 0)		/* →キー */
-		px ++;	/* 右に移動 */
-	else if(key == 27)								/* ESCキー */
-		play_start();	/* 最初の状態に戻る */
-	else											/* 上記以外のキーの場合は */
-		key_input();								/* 再度キー入力受付 */
+		px ++;						/* 右に移動 */
+	else if(key == 27)					/* ESCキー */
+		play_start();					/* 最初の状態に戻る */
+	else							/* 上記以外のキーの場合は */
+		key_input();					/* 再度キー入力受付 */
 }
 
 int main(void)
@@ -164,8 +163,8 @@ int main(void)
 			sleep(3);
 
 			// マップリセット
-			RandomMeiro(); /* マップをランダムで設置する */
-	        goal_count_check();	/* 塗りつぶすべき床の数をカウントする */
+			RandomMeiro(); 	/* マップをランダムで設置する */
+	        	goal_count_check();	/* 塗りつぶすべき床の数をカウントする */
 			play_start(); /* マップリセット */
 		}
 
