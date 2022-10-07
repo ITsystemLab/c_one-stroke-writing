@@ -83,8 +83,10 @@
 ## 使い方
 
 <img width="auto" src="https://user-images.githubusercontent.com/87808547/194375621-df15925c-4418-4639-b4d5-90a15220239e.png">
+
 # ←↑→↓
 操作
+
 # ESC
 <ul>
   <li>元の位置に戻る</li>
